@@ -1,4 +1,17 @@
 build:
   docker:
-    web: ./docker/prestashop/Dockerfile
-    web: ./docker/mariadb/Dockerfile
+    prestashop: ./docker/prestashop/Dockerfile
+    mariadb: ./docker/mariadb/Dockerfile
+    phpmyadmin: ./docker/phpmyadmin/Dockerfile
+  config:
+    PS_DEV_MODE=1
+    DB_SERVER=mariadb
+    DB_USER=root
+    DB_PASSWD=root
+    DB_NAME=prestashop
+    PS_INSTALL_AUTO=0
+    MYSQL_ROOT_PASSWORD=root
+    MYSQL_DATABASE=prestashop
+    PMA_HOST=mariadb
+    PMA_USER=root
+    PMA_PASSWORD=root

@@ -1,6 +1,6 @@
 version: '2'
 
-services: 
+services:
   prestashop:
     build: ./docker/prestashop
     ports:
@@ -30,11 +30,12 @@ services:
       - MYSQL_DATABASE=prestashop
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    # image: phpmyadmin/phpmyadmin
+    build: ./docker/phpmyadmin
     links:
       - mariadb
-    ports: 
-      - 81:80 
+    ports:
+      - 81:80
     environment:
       - PMA_HOST=mariadb
       - PMA_USER=root
